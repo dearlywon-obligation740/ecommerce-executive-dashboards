@@ -37,7 +37,7 @@
 <p>I had a raw transactional dataset from a UK online retailer (541,909 rows) and wanted to answer the kinds of questions a commercial team would actually ask:</p>
 
 <ul>
-  <li>How is revenue trending and what is driving changes month to month?</li>
+  <li>How is revenue trending, and what is driving changes month to month?</li>
   <li>How much of our revenue depends on repeat customers?</li>
   <li>Where are we leaking revenue through cancellations and returns?</li>
   <li>Is product revenue concentrated or diversified?</li>
@@ -122,7 +122,7 @@
 
 <p><strong>You cannot sum averages.</strong> When the revenue driver equation shows the full year, AOV and Orders per Customer must be recalculated from the totals (total revenue / total invoices), not summed across 12 monthly values. This is a basic but easy-to-miss analytical principle.</p>
 
-<p><strong>MoM % comparison direction matters.</strong> The change indicators compare current month's MoM % minus prior month's MoM %. If current month growth is -13% and last month was +0.5%, the difference is -13.5pp, so the arrow points down. Simply showing last month's +0.5% as a green up-arrow would be misleading.</p>
+<p><strong>MoM % comparison direction matters.</strong> The change indicators compare the current month's MoM % minus the prior month's MoM %. If the current month growth is -13% and last month was +0.5%, the difference is -13.5pp, so the arrow points down. Simply showing last month's +0.5% as a green up-arrow would be misleading.</p>
 
 <p><strong>Separating data from presentation</strong> makes everything easier. Keeping the raw data, pivot calculations, and visual dashboard on separate sheets means you can update source data without breaking the layout.</p>
 
@@ -172,4 +172,4 @@
 
 <p>This project represents the kind of work I want to do professionally: taking messy real-world data, cleaning it properly, modelling it for analysis, and presenting it in a format that decision-makers can actually use.</p>
 
-<p><a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">Connect with me on LinkedIn</a></p>
+<p><a href="https://www.linkedin.com/in/sean-worrall-data">Connect with me on LinkedIn</a></p>

@@ -12,7 +12,7 @@
 
 <p>The guiding principle was <strong>flag, not delete</strong>. Every row is preserved. Boolean flag columns classify each transaction so the analysis layer can filter as needed. This means the same dataset supports revenue reporting (filter to sales), cancellation analysis (needs cancelled rows), return analysis (needs return rows), and customer segmentation (needs identifiable customers only).</p>
 
-<p>The classification framework uses rule-based logic rather than manually hardcoded stock code lists. Description pattern matching and stock code format analysis identify non-product entries. This is transparent and reproducible. In a real business, the classification would be refined with domain input from the commercial team, but for a portfolio project the rule-based approach is defensible and clearly documented.</p>
+<p>The classification framework uses rule-based logic rather than manually hardcoded stock code lists. Description pattern matching and stock code format analysis identify non-product entries. This is transparent and reproducible. In a real business, the classification would be refined with domain input from the commercial team, but for a portfolio project, the rule-based approach is defensible and clearly documented.</p>
 
 <p>Full details and code in <a href="../data-cleaning/cleaning-notes.md">cleaning-notes.md</a> and <a href="../data-cleaning/data_cleaning_notebook.ipynb">the notebook</a>.</p>
 
@@ -26,7 +26,7 @@
 
 <p>A separate <strong>CUBEVALUE reference table</strong> was added alongside the pivot outputs. This was necessary because the pivot tables are built on the Data Model and physically collapse when filtered by a slicer — rows disappear, the Grand Total shifts to a different row, and all the calculated formula columns (MoM %, vs Previous Month, etc.) break. CUBEVALUE reads the Data Model directly and is completely unaffected by slicer state, so it provides a stable source for charts, sparklines, and subtitle formulas.</p>
 
-<p>The CUBEVALUE formulas use concatenated cell references to make the month dynamic (hardcoded in column F) while keeping the year dynamic from the pivot filter area cell. The filter criteria (<code>is_sale</code>, <code>is_cancelled</code>) are included in the CUBEVALUE arguments so the numbers match the pivot outputs exactly.</p>
+<p>The CUBEVALUE formulas use concatenated cell references to make the month dynamic (hardcoded in column F) while keeping the year dynamic from the pivot filter area cell. The filter criteria (<code>is_sale</code>, <code>is_cancelled</code>) are included in the CUBEVALUE arguments, so the numbers match the pivot outputs exactly.</p>
 
 ---
 
@@ -38,7 +38,7 @@
 
 <pre>
 Slicers on Dashboard
-  → Filter pivot tables on KPIs sheet
+  → Filter pivot tables on the KPIs sheet
     → GETPIVOTDATA helper cells capture Grand Total values
       → Text boxes on Dashboard linked to helper cells
         → Charts reference CUBEVALUE column (slicer-independent)
@@ -49,7 +49,7 @@ Slicers on Dashboard
 
 <p>For metrics that are not pivot fields (AOV, MoM %, vs Previous Month), these are calculated formula columns on the KPIs sheet that also collapse with the pivot. The CUBEVALUE reference table solves this: it always holds all 12 months of data, and INDEX/MATCH formulas look up the selected month against it to produce subtitle text and change indicators.</p>
 
-<p>The change indicator logic compares <strong>current month's MoM % minus prior month's MoM %</strong>. This is an important distinction. If current month growth is -13% and last month's was +0.5%, showing last month's value as a green up-arrow would be misleading. The arrow needs to reflect whether things are getting better or worse, not the raw sign of the prior value.</p>
+<p>The change indicator logic compares <strong>current month's MoM % minus prior month's MoM %</strong>. This is an important distinction. If the current month's growth is -13% and last month's was +0.5%, showing last month's value as a green up-arrow would be misleading. The arrow needs to reflect whether things are getting better or worse, not the raw sign of the prior value.</p>
 
 <h3>Dashboard 2 (Static)</h3>
 
@@ -73,13 +73,11 @@ Slicers on Dashboard
   <tr><td>Gold</td><td>#FFD166</td><td>AOV, frequency, warnings</td></tr>
 </table>
 
-<p>Cards are rounded rectangle shapes with text boxes layered on top. This is cleaner and more repositionable than merged cells. Charts use the same palette with transparent backgrounds so they blend into the dashboard surface.</p>
+<p>Cards are rounded rectangle shapes with text boxes layered on top. This is cleaner and more repositionable than merged cells. Charts use the same palette with transparent backgrounds, so they blend into the dashboard surface.</p>
 
 ---
 
 <h2>Key Analytical Decisions</h2>
-
-<p><strong>Revenue driver decomposition uses division from totals, not averaged averages.</strong> When showing the full year, AOV = Total Revenue / Total Invoices (not the average of 12 monthly AOVs). Averaging averages produces incorrect results when the underlying volumes differ month to month.</p>
 
 <p><strong>Cancellation rate uses distinct invoice count, not row count.</strong> Each invoice can have multiple product lines. Counting rows would inflate the rate depending on how many products were on each order. Distinct count of invoice numbers gives the true order-level cancellation rate.</p>
 

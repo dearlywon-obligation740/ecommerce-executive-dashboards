@@ -8,7 +8,7 @@
 
 <h2>Cleaned Fact Table: <code>fact_transactions</code></h2>
 
-<p>After cleaning in Python, each row is still a single line item on an invoice. No rows were deleted. Boolean flags were added so the data can be filtered dynamically in Excel.</p>
+<p>After cleaning in Python, each row is still a single line item on an invoice. No rows were deleted. Boolean flags were added to enable dynamic filtering in Excel.</p>
 
 <h3>Original Fields</h3>
 

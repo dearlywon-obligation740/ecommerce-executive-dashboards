@@ -14,6 +14,12 @@
 <img src="screenshots/dashboard-demo.gif" width="700">
 </p>
 
+### Key Insights
+
+• £9.46M revenue analysed across 541k transactions  
+• 64.1% repeat customers generate 92.3% of revenue  
+• 14.8% order cancellation rate impacting sales
+
 ---
 
 <h2>Dashboards</h2>
@@ -33,7 +39,7 @@
 
 <p>A static full-year view focused on customer segmentation and product concentration. Repeat vs one-time revenue split, top 10 products by revenue, revenue per customer segment, and order frequency distribution.</p>
 
-<p align="center"><img src="screenshots/dashboard2-customer-product.png" width="70%" alt="Customer & Product Deep Dive" /></p>
+<p align="center"><img src="screenshots/dashboard2-customer-product.png" width="650" alt="Customer & Product Deep Dive" /></p>
 
 ---
 

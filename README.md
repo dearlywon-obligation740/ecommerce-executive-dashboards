@@ -10,6 +10,10 @@
 
 <p align="center"><em>An end-to-end analytics project: raw Kaggle dataset through to interactive executive dashboards in Excel.</em></p>
 
+<p align="center">
+<img src="screenshots/dashboard-demo.gif" width="700">
+</p>
+
 ---
 
 <h2>Dashboards</h2>
@@ -18,11 +22,12 @@
 
 <p>A slicer-driven dashboard that lets you drill into any month or view the full year at a glance. KPI cards with month-on-month change indicators, revenue trend, customer activity, AOV tracking, a 3-driver revenue decomposition, operational leakage metrics, and a retention donut.</p>
 
-<p align="center"><img src="screenshots/dashboard1-full-year.png" width="70%" alt="Executive Dashboard — Full Year" /></p>
+<p align="center">
+<img src="screenshots/dashboard1-full-year.png" width="48%" alt="Executive Dashboard — Full Year">
+<img src="screenshots/dashboard1-filtered-march.png" width="48%" alt="Executive Dashboard — March 2011">
+</p>
 
 <p>Select a month, and everything updates. The KPI cards show that month's figures, the change indicators flip between green and red based on trend direction, and the revenue driver equation recalculates to decompose that month's revenue into Customers × Frequency × Basket Size.</p>
-
-<p align="center"><img src="screenshots/dashboard1-filtered-march.png" width="70%" alt="Executive Dashboard — March 2011" /></p>
 
 <h3>Dashboard 2 — Customer & Product Deep Dive</h3>
 

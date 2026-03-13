@@ -162,24 +162,27 @@
 │   ├── dashboard1-filtered-march.png
 │   ├── dashboard2-customer-product.png
 │   ├── power-query-columns-left.png
-│   └── power-query-columns-right.png
+│   ├── power-query-columns-right.png
+│   └── dashboard-demo.gif
 ├── data-cleaning/
 │   ├── data_cleaning_notebook.ipynb
 │   └── cleaning-notes.md
+├── data/
+│   └── cleaned_data_sample.csv
 └── docs/
     ├── data-dictionary.md
     └── methodology.md
 </pre>
 
 <blockquote>
-  <strong>Note:</strong> The Excel workbook is included with the raw data removed to reduce file size. It contains all pivot tables, KPI calculations, the CUBEVALUE reference table, the Cohort Analysis sheet, and both dashboards with their shapes, charts, and formulas intact. The raw dataset is freely available on <a href="https://www.kaggle.com/datasets/carrie1/ecommerce-data">Kaggle</a> and can be reloaded through the existing Power Query connection.
+  <strong>Note:</strong> The Dashboards Excel workbook is included with the raw data removed to reduce file size. It contains all pivot tables, KPI calculations, the CUBEVALUE reference table, the Cohort Analysis sheet, and both dashboards with their shapes, charts, and formulas intact. The raw dataset is freely available on <a href="https://www.kaggle.com/datasets/carrie1/ecommerce-data">Kaggle</a> and can be reloaded through the existing Power Query connection. A sample of the cleaned data from the Python output has also been added.
 </blockquote>
 
 ---
 
 <h2>About Me</h2>
 
-<p>I am a Junior Analyst based in Nottingham, transitioning into data analytics after seven years as a self-employed personal trainer. I hold a Level 3 Diploma in Data Analytics with Power BI and DataCamp certifications, and I have been building self-directed projects in SQL, Power BI, and Excel to develop practical skills.</p>
+<p>I am a Junior Analyst based in Nottingham, transitioning into data analytics after seven years as a self-employed personal trainer. I hold a Level 3 Diploma in Data Analytics with Power BI and DataCamp certifications, and I have been building self-directed projects in SQL, Power BI, and Excel to develop practical skills. I am ready to apply these skills in a work environment.</p>
 
 <p>This project represents the kind of work I want to do professionally: taking messy real-world data, cleaning it properly, modelling it for analysis, and presenting it in a format that decision-makers can actually use.</p>
 

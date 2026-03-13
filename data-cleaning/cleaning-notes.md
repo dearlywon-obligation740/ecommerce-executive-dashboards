@@ -89,7 +89,7 @@ df['weekday'] = df['invoice_date'].dt.day_name()
 
 <p><code>df.duplicated().sum()</code> flagged 5,268 rows. Initial inspection was confusing because sorting by <code>invoice_no</code> grouped rows from the same invoice together, making it look like different products on the same order were being flagged as duplicates.</p>
 
-<p>Closer inspection using <code>df.duplicated(keep=False)</code> confirmed these were genuine full-row copies: same invoice number, same stock code, same quantity, same price, same date, same customer. The same product line appearing twice on the same invoice, identically. This is a known characteristic of this dataset, likely caused by export duplication.</p>
+<p>Closer inspection using <code>df.duplicated(keep=False)</code> confirmed these were genuine full-row copies: same invoice number, same stock code, same quantity, same price, same date, same customer. The same product line appears twice on the same invoice, identically. This is a known characteristic of this dataset, likely caused by export duplication.</p>
 
 ```python
 df = df.drop_duplicates()
@@ -197,11 +197,11 @@ df['gross_sale_value'] = df['revenue'].where(df['revenue'] > 0, 0)
 
 <h2>Key Decisions</h2>
 
-<p><strong>Flag instead of delete.</strong> Every row in the original dataset is preserved. Deleting cancellations would make it impossible to calculate cancellation rate. Deleting returns would hide product quality signals. Deleting guest transactions would understate revenue by ~15%.</p>
+<p><strong>Flag instead of delete.</strong> Every row in the original dataset is preserved. Deleting cancellations would make it impossible to calculate the cancellation rate. Deleting returns would hide product quality signals. Deleting guest transactions would understate revenue by ~15%.</p>
 
 <p><strong>Rule-based classification over manual lookup.</strong> Rather than hardcoding a list of stock codes, a rule-based approach using description patterns and stock code format identifies non-product entries. Transparent, reproducible, and defensible.</p>
 
-<p><strong>Revenue engineering in Python, KPI calculation in Excel.</strong> Deliberately separating data preparation from reporting to demonstrate multi-tool workflow and clear separation of concerns.</p>
+<p><strong>Revenue engineering in Python, KPI calculation in Excel.</strong> Deliberately separating data preparation from reporting to demonstrate a multi-tool workflow and clear separation of concerns.</p>
 
 <p><strong>December 2010 kept but excluded from seasonality.</strong> The dataset only contains one month of 2010 data. It was retained in the dataset but excluded from time-series analysis to avoid distortion.</p>
 
@@ -209,7 +209,7 @@ df['gross_sale_value'] = df['revenue'].where(df['revenue'] > 0, 0)
 
 <h2>Output</h2>
 
-<p>Exported as CSV and loaded into Excel's Data Model via Power Query as <code>fact_transactions</code>. Data types for ID columns were explicitly set to Text in Power Query to prevent Excel auto-converting numeric-looking codes to numbers.</p>
+<p>Exported as CSV and loaded into Excel's Data Model via Power Query as <code>fact_transactions</code>. Data types for ID columns were explicitly set to Text in Power Query to prevent Excel from auto-converting numeric-looking codes to numbers.</p>
 
 ---
 

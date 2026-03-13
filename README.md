@@ -90,8 +90,8 @@
 <p>The cleaned data was loaded into Excel's Data Model through Power Query as <code>fact_transactions</code>. A small number of transformation steps were applied in Power Query to ensure correct data types (booleans, dates, text for ID columns) and to rename the revenue column to <code>net_revenue</code>.</p>
 
 <p align="center">
-  <img src="screenshots/power-query-columns-left.png" width="49%" alt="Power Query — columns and applied steps" />
   <img src="screenshots/power-query-columns-right.png" width="49%" alt="Power Query — flag columns and data types" />
+  <img src="screenshots/power-query-columns-left.png" width="49%" alt="Power Query — columns and applied steps" />
 </p>
 
 <p>Multiple pivot tables were built on a KPIs sheet, each filtered to different slices:</p>
